@@ -56,37 +56,46 @@ const Stopwatch: React.FC = () => {
     const minutes = `0${Math.floor(totalSeconds / 60)}`.slice(-2); // Minutes
 
     return (
-      <div className="flex">
-        <span>{minutes}</span>: <span>{seconds}</span>:
-        <span>{centiseconds}</span>
+      <div className="flex justify-center transition-all duration-75 ease-out">
+        <span className="w-[85px] sm:w-[200px] md:w-[250px] lg:w-[350px]">
+          {minutes}
+        </span>
+        :
+        <span className="w-[85px] sm:w-[200px] md:w-[250px] lg:w-[350px]">
+          {seconds}
+        </span>
+        :
+        <span className="w-[85px] sm:w-[200px] md:w-[250px] lg:w-[350px]">
+          {centiseconds}
+        </span>
       </div>
     );
   };
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="sx:text-[5rem] w-[70rem] py-[2rem] text-center text-[4rem] font-extrabold text-white sm:text-[7rem] lg:text-[14rem]">
+      <div className="sx:text-[5rem] py-[2rem] text-center text-[3rem] font-extrabold text-white sm:text-[7rem] md:text-[10rem] lg:text-[14rem]">
         {formatTime(time)}
       </div>
-      <div className="mt-2 flex flex-col sm:flex-row">
+      <div className="mt-2 flex flex-col gap-3 sm:flex-row md:gap-5">
         {!isRunning ? (
           <Button
             btnName="Start"
-            className="mb-5 bg-pink-400 px-4 py-2 text-white hover:bg-[#5b4266]"
+            className="bg-pink-400 px-2 py-1 text-white hover:bg-[#5b4266] md:px-4 md:py-2"
             onClick={startTimer}
           />
         ) : (
           <Button
             onClick={stopTimer}
             btnName="Pause"
-            className="bg-pink-400 px-4 py-2 text-white hover:bg-[#5b4266]"
+            className="bg-pink-400 px-2 py-1 text-white hover:bg-[#5b4266] md:px-4 md:py-2"
           />
         )}
 
         <Button
           onClick={resetTimer}
           btnName="Reset"
-          className="bg-[#5b4266] px-4 py-2 text-white hover:bg-slate-50 hover:text-[#5b4266]"
+          className="bg-[#5b4266] px-2 py-1 text-white hover:bg-slate-50 hover:text-[#5b4266] md:px-4 md:py-2"
         />
       </div>
     </div>

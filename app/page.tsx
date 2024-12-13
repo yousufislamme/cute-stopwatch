@@ -3,7 +3,7 @@ import Stopwatch from "@/components/Stopwatch";
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 
 const Home: React.FC = () => {
-  const [title, setTitle] = useState<string>("Stopwatch");
+  const [title, setTitle] = useState<string>("WriteYourFocus...");
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   const handleDoubleClick = () => {
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="bg-[#2C1338] py-10">
+    <main className="h-[100vh] bg-[#2C1338] py-10">
       <div className="flex w-full justify-center">
         {/* Title */}
         {isEditing ? (
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
           />
         ) : (
           <h1
-            className="mt-2 cursor-pointer text-3xl font-semibold text-slate-50"
+            className="mt-2 cursor-pointer text-lg font-semibold text-slate-50 sm:text-3xl"
             onDoubleClick={handleDoubleClick}
           >
             {title}
